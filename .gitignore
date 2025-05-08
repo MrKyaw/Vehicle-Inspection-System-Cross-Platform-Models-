@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 data/cifar-10-python.tar.gz
 *.DS_Store
@@ -18,3 +19,6 @@ data/
 *.npz
 data/cifar-10-python.tar.gz
 *.tar.gz
+=======
+/target
+>>>>>>> 865659e (Commit changes)

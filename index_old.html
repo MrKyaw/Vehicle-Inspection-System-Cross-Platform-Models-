@@ -1,0 +1,68 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rust+WASM ONNX Classifier</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        #preview { max-width: 300px; margin: 10px 0; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Image Classification with Rust+WASM</h1>
+    <input type="file" id="fileInput" accept="image/*">
+    <img id="preview" style="display: none;">
+    <div id="result"></div>
+
+    <script type="module">
+        import init, { OnnxClassifier } from './pkg/wasm_onnx.js';
+
+        async function run() {
+            await init();
+            
+            // Load ONNX model (fetch from server)
+            const modelResponse = await fetch('resnet18.onnx');
+            const modelBytes = new Uint8Array(await modelResponse.arrayBuffer());
+            
+            // Initialize classifier
+            const classifier = new OnnxClassifier(modelBytes);
+            
+            // Handle file input
+            document.getElementById('fileInput').addEventListener('change', async (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                // Display preview
+                const preview = document.getElementById('preview');
+                preview.src = URL.createObjectURL(file);
+                preview.style.display = 'block';
+                
+                // Read image
+                const reader = new FileReader();
+                reader.onload = async (event) => {
+                    const imgBytes = new Uint8Array(event.target.result);
+                    
+                    try {
+                        const start = performance.now();
+                        const prediction = await classifier.predict(imgBytes);
+                        const duration = (performance.now() - start).toFixed(2);
+                        
+                        document.getElementById('result').innerHTML = `
+                            Predicted class: ${prediction}<br>
+                            Inference time: ${duration}ms
+                        `;
+                    } catch (err) {
+                        console.error(err);
+                        document.getElementById('result').textContent = 'Error during prediction';
+                    }
+                };
+                reader.readAsArrayBuffer(file);
+            });
+        }
+
+        run();
+    </script>
+</body>
+</html>
