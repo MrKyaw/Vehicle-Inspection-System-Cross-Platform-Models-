@@ -1,5 +1,18 @@
 
 data/cifar-10-python.tar.gz
 *.DS_Store
+
+# Data files
+data/
+!data/README.md
+
+# Model files
+*.onnx
+*.h5
+*.pth
+*.pt
+
+# Large files
 *.tar.gz
-*.tar
+*.zip
+*.npz
