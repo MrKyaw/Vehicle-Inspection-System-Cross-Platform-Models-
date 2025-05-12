@@ -19,6 +19,9 @@ data/
 *.npz
 data/cifar-10-python.tar.gz
 *.tar.gz
+<<<<<<< HEAD
 =======
 /target
 >>>>>>> 865659e (Commit changes)
+=======
+>>>>>>> 0c3f4ff (Results Added)
