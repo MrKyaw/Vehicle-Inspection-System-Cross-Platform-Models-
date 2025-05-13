@@ -1,0 +1,29 @@
+{
+  "name": "vehicle-damage-resnet18",
+  "version": "1.0.0",
+  "input_shape": [1, 3, 640, 640],
+  "labels": ["scratch", "dent", "crack", "chip"],
+  "preprocessing": {
+    "resize": [640, 640],
+    "mean": [0.485, 0.456, 0.406],
+    "std": [0.229, 0.224, 0.225],
+    "pad_value": 114,
+    "color_order": "rgb",
+    "layout": "nchw"
+  },
+  "thresholds": {
+    "score": 0.35,
+    "iou": 0.5,
+    "review": 0.6,
+    "fail": 0.85
+  },
+  "platforms": ["onnx", "pytorch", "wasm"],
+  "calibration": {
+    "crack": 1.4,
+    "dent": 1.2
+  },
+  "metadata": {
+    "task": "vehicle-damage-detection",
+    "license": "MIT"
+  }
+}

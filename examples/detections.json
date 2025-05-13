@@ -1,0 +1,33 @@
+{
+  "image": {
+    "width": 1280,
+    "height": 720
+  },
+  "detections": [
+    {
+      "label": "scratch",
+      "confidence": 0.82,
+      "box": [120, 120, 300, 220]
+    },
+    {
+      "label": "scratch",
+      "confidence": 0.78,
+      "box": [125, 122, 298, 218]
+    },
+    {
+      "label": "dent",
+      "confidence": 0.74,
+      "box": [900, 380, 1100, 560]
+    },
+    {
+      "label": "crack",
+      "confidence": 0.71,
+      "box": [300, 480, 360, 700]
+    },
+    {
+      "label": "chip",
+      "confidence": 0.22,
+      "box": [40, 640, 90, 690]
+    }
+  ]
+}

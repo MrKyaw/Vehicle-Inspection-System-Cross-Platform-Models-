@@ -1,10 +1,39 @@
-<<<<<<< HEAD
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+pip-wheel-metadata/
 
-data/cifar-10-python.tar.gz
-*.DS_Store
+# Test and coverage artifacts
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# Type checking and lint caches
+.mypy_cache/
+.dmypy.json
+.ruff_cache/
+.pyre/
+
+# Rust build output
+/target
+wasm-onnx/pkg/
 
 # Data files
-data/
+data/*
 !data/README.md
 
 # Model files
@@ -13,15 +42,13 @@ data/
 *.pth
 *.pt
 
-# Large files
+# Large archives
 *.tar.gz
 *.zip
 *.npz
-data/cifar-10-python.tar.gz
-*.tar.gz
-<<<<<<< HEAD
-=======
-/target
->>>>>>> 865659e (Commit changes)
-=======
->>>>>>> 0c3f4ff (Results Added)
+
+# OS and editor artifacts
+.DS_Store
+.idea/
+.vscode/
+*.swp
