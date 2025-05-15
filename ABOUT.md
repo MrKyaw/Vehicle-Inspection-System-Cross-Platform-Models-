@@ -14,7 +14,7 @@ This repository adds `vehicle_inspection`, a **dependency-free Python 3.10+ pack
 
 ## What it is
 
-- A recruiter-facing demonstration of domain modeling, computer-vision fundamentals, deterministic algorithms, API/CLI design, and test discipline.
+- A reviewer-facing demonstration of domain modeling, computer-vision fundamentals, deterministic algorithms, API/CLI design, and test discipline.
 - A runnable, offline reference implementation with **372 tests** and **100% line and branch coverage** of the new package.
 - An additive layer that preserves the original notebooks, Rust crate, server samples, ONNX export, screenshot, and MIT license.
 

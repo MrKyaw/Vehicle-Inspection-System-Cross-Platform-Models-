@@ -296,7 +296,7 @@ More detail: [ARCHITECTURE.md](ARCHITECTURE.md) and [docs/DESIGN_DECISIONS.md](d
 - **Calibration temperatures in the demo are illustrative.** `TemperatureCalibrator` and ECE are implemented and tested, but no real calibration study is claimed.
 - **The report schema is versioned but not yet consumed by an external service.** `1.0` is the first contract.
 
-## Recruiter snapshot
+## Reviewer snapshot
 
 If you have two minutes:
 
